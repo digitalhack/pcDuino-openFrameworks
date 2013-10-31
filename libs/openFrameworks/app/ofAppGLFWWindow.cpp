@@ -247,7 +247,7 @@ void ofAppGLFWWindow::initializeWindow(){
 
 }
 
-#ifdef TARGET_LINUX
+#if defined(TARGET_LINUX) && !defined(TARGET_RASPBERRY_PI) && !defined(TARGET_PCDUINO_MFB)
 //------------------------------------------------------------
 void ofAppGLFWWindow::setWindowIcon(const string & path){
     ofPixels iconPixels;
@@ -1080,7 +1080,7 @@ void ofAppGLFWWindow::iconify(bool bIconify){
 }
 
 
-#if defined(TARGET_LINUX) && !defined(TARGET_RASPBERRY_PI)
+#if defined(TARGET_LINUX) && !defined(TARGET_RASPBERRY_PI) && !defined(TARGET_PCDUINO_MFB)
 Display* ofAppGLFWWindow::getX11Display(){
 	return glfwGetX11Display();
 }

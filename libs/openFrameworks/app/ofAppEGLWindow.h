@@ -252,6 +252,9 @@ protected:
 	
 	bool createRPiNativeWindow(const ofRectangle& requestedWindowRect);
 
+#elif defined TARGET_PCDUINO_MFB
+  struct mali_native_window maliFBNativeWindow;
+	bool createMaliFBNativeWindow(const ofRectangle& requestedWindowRect);
 #else
 	// if you are not raspberry pi, you will not be able to
 	// create a window without using x11.

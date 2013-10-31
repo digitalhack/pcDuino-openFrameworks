@@ -76,7 +76,7 @@ public:
 
 	void		setVerticalSync(bool bSync);
 
-#if defined(TARGET_LINUX) && !defined(TARGET_RASPBERRY_PI)
+#if defined(TARGET_LINUX) && !defined(TARGET_RASPBERRY_PI) && !defined(TARGET_PCDUINO_MFB)
 	Display* 	getX11Display();
 	Window  	getX11Window();
 #endif

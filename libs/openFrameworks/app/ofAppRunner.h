@@ -63,9 +63,12 @@ void 		ofSetVerticalSync(bool bSync);
 
 //-------------------------- native window handles
 #if defined(TARGET_LINUX) && !defined(TARGET_RASPBERRY_PI)
-#include <X11/Xlib.h>
+  #if defined(TARGET_LINUX) && !defined(TARGET_PCDUINO_MFB)
+    #warning("Here: native window handles")
+    #include <X11/Xlib.h>
 	Display* ofGetX11Display();
 	Window  ofGetX11Window();
+  #endif
 #endif
 
 #if defined(TARGET_LINUX) && !defined(TARGET_OPENGLES)

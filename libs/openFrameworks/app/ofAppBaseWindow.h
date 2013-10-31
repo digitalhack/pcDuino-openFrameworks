@@ -3,7 +3,7 @@
 #include "ofPoint.h"
 #include "ofTypes.h"
 
-#if defined(TARGET_LINUX) && !defined(TARGET_RASPBERRY_PI)
+#if defined(TARGET_LINUX) && !defined(TARGET_RASPBERRY_PI) && !defined(TARGET_PCDUINO_MFB) 
 #include <X11/Xlib.h>
 #endif
 
@@ -50,7 +50,7 @@ public:
 	
 	virtual void	setVerticalSync(bool enabled){};
 
-#if defined(TARGET_LINUX) && !defined(TARGET_RASPBERRY_PI)
+#if defined(TARGET_LINUX) && !defined(TARGET_RASPBERRY_PI) && !defined(TARGET_PCDUINO_MFB)
 	virtual Display* getX11Display(){return NULL;}
 	virtual Window  getX11Window() {return 0;}
 #endif
